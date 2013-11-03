@@ -1,6 +1,5 @@
 LIBTHUMB_1 {
     global:
-      create_thumb;
-      free_thumb;
+      ffthumb_*;
     local: *;
 };
