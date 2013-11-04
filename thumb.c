@@ -250,6 +250,7 @@ int64_t ffthumb_load_frame(ThumbContext *ctx, double position, char **buffer)
   if (timestamp > 0) {
     av_seek_frame(ctx->ctx, -1, timestamp, AVSEEK_FLAG_BACKWARD);
   }
+  avcodec_flush_buffers(ctx->stream->codec);
   av_log(NULL, AV_LOG_INFO, "seek to %" PRId64 "\n", timestamp);
 
   frame = avcodec_alloc_frame();
