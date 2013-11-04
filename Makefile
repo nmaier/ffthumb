@@ -13,4 +13,7 @@ install: ffthumb.dll libffthumb.dll.a thumb.h
 	cp -f $^ $(PREFIX)/dist/
 	$(STRIP) $(PREFIX)/dist/$<
 
-.PHONY: all install
+clean:
+	rm -f *.dll*
+
+.PHONY: all install clean
