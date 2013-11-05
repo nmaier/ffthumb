@@ -193,7 +193,7 @@ ThumbContext * ffthumb_create(const char *filename)
   if (!rv) {
     goto err_free;
   }
-  memset(rv, 0, sizeof(rv));
+  memset(rv, 0, sizeof(ThumbContext));
 
   if (avformat_open_input(&rv->ctx, filename, NULL, NULL) < 0) {
     av_log(NULL, AV_LOG_FATAL, "Cannot open file\n");
